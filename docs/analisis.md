@@ -13,7 +13,9 @@
 
 ### Paquete modelo.mascotas
 
-(pendiente)
+| Clase candidata | Tipo | Atributos principales | Responsabilidades (métodos) | Justificación |
+| --- | --- | --- | --- | --- |
+| Mascota | Abstracta | # nombre: String, # edad: double, # peso: double, # dueno: Dueno, - historial: HistorialClinico | # Mascota(String nombre, double edad, double peso, Dueno dueno)<br>+ getNombre(): String<br>+ getEdad(): double<br>+ getPeso(): double<br>+ getDueno(): Dueno<br>+ getHistorial(): HistorialClinico<br>+ setNombre(String nombre): void<br>+ setEdad(double edad): void<br>+ setPeso(double peso): void<br>+ abstract hacerSonido(): String<br>+ toString(): String | Representa lo que tienen en común el perro, el gato y el ave exótica; es abstracta porque no existe una mascota genérica y porque declara hacerSonido() sin cuerpo, que cada hija implementa a su manera; su única responsabilidad es guardar y validar los datos comunes de la mascota y crear su historial clínico. |
 
 ### Paquete modelo.servicios
 
