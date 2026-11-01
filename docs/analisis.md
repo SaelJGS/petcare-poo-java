@@ -23,7 +23,12 @@
 
 ### Paquete modelo.servicios
 
-(pendiente)
+| Clase candidata | Tipo | Atributos principales | Responsabilidades (métodos) | Justificación |
+| --- | --- | --- | --- | --- |
+| Facturable | Interfaz | (ninguno) | + calcularCosto(): double | Representa la capacidad de cobrarse que comparten los servicios de la clínica; es interfaz porque consulta, vacunación y cirugía no comparten atributos, solo la capacidad de calcular su costo; su única responsabilidad es declarar el contrato de cobro sin implementarlo. |
+| Consulta | Concreta | - TARIFA_BASE: double (static final) = 300.0, - motivo: String, - diagnostico: String | + Consulta()<br>+ Consulta(String motivo, String diagnostico)<br>+ getMotivo(): String<br>+ setMotivo(String motivo): void<br>+ getDiagnostico(): String<br>+ setDiagnostico(String diagnostico): void<br>+ calcularCosto(): double<br>+ toString(): String | Representa una consulta general que se le hace a una mascota; es concreta porque implementa el contrato de Facturable y se instancia con sus datos propios (motivo y diagnóstico); su única responsabilidad es guardar y validar esos datos y calcular su costo con la tarifa base. |
+| Vacunacion | Concreta | - TARIFA_APLICACION: double (static final) = 100.0, - nombreVacuna: String, - costoVacuna: double | + Vacunacion(String nombreVacuna, double costoVacuna)<br>+ getNombreVacuna(): String<br>+ setNombreVacuna(String nombreVacuna): void<br>+ getCostoVacuna(): double<br>+ setCostoVacuna(double costoVacuna): void<br>+ calcularCosto(): double<br>+ toString(): String | Representa una vacunación aplicada a una mascota; es concreta porque implementa el contrato de Facturable y se instancia con sus datos propios (nombre y costo de la vacuna); su única responsabilidad es guardar y validar esos datos y calcular su costo sumando la tarifa de aplicación y el costo de la vacuna. |
+| Cirugia | Concreta | - COSTO_HORA_QUIROFANO: double (static final) = 800.0, - complejidad: String, - horasQuirofano: double | + Cirugia(String complejidad, double horasQuirofano)<br>+ getComplejidad(): String<br>+ setComplejidad(String complejidad): void<br>+ getHorasQuirofano(): double<br>+ setHorasQuirofano(double horasQuirofano): void<br>+ calcularCosto(): double<br>+ toString(): String | Representa una cirugía que se le practica a una mascota; es concreta porque implementa el contrato de Facturable y se instancia con sus datos propios (complejidad y horas de quirófano); su única responsabilidad es guardar y validar esos datos y calcular su costo a partir de ambos. |
 
 ### Paquete modelo.clinica
 
