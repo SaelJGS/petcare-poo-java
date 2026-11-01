@@ -42,8 +42,46 @@
 
 ## 2. Objetos de ejemplo
 
-(pendiente)
+### Objeto 1: un perro (herencia de Mascota)
+
+```text
+miPerro: Perro
+- nombre = "Chamoy"
+- edad = 4.0
+- peso = 18.5
+- dueno = "Sael Garduza"
+- historial = HistorialClinico (vacío, creado por la mascota)
+- raza = "Labrador"
+- nivelEnergia = 4
+hacerSonido() devuelve "Gua Gua"
+```
+
+### Objeto 2: un veterinario (herencia de Persona)
+
+```text
+miVeterinario: Veterinario
+- nombre = "Luis"
+- apellido = "Ramírez"
+- telefono = "9211234567"
+- correo = "luis.ramirez@petcare.com"
+- cedulaProfesional = "12345678"
+- especialidad = "Medicina general"
+```
+
+### Objeto 3: una vacunación (servicio Facturable)
+
+```text
+miVacunacion: Vacunacion
+- TARIFA_APLICACION = 100.0 (constante de la clase)
+- nombreVacuna = "Antirrábica"
+- costoVacuna = 150.0
+calcularCosto() devuelve 100.0 + 150.0 = 250.0
+```
 
 ## 3. Clases descartadas
 
-(pendiente)
+| Clase candidata | Por qué se descartó |
+| --- | --- |
+| Sonido | No es una entidad con datos ni comportamiento propio: es el resultado de `hacerSonido()`, así que basta un `String`. |
+| Telefono / Correo | Son datos simples de contacto sin comportamiento propio; son atributos de `Persona`, validados en sus setters. |
+| Cobro | El caso lo menciona, pero ya lo representa `Comprobante`; crear otra clase duplicaría la misma responsabilidad. |
